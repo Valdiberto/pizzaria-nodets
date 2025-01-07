@@ -1,10 +1,10 @@
 import { Router } from 'express'
+import * as pageController from '../controllers/pageController'
 
 const router = Router()
 
-router.get('/', (req, res) =>{
-  res.send('home')
-})
+router.get('/', pageController.home)
+
 
 
 export default router
