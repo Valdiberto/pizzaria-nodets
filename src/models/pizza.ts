@@ -69,9 +69,19 @@ const data: Pizza[] =  [
   }
 ];
 
-export const Pizza = {
+/*export const Pizza = {
   getAll: (): Pizza[] => {
     return data
   }
-  
-}
+}*/
+
+
+
+export const Pizza = {
+  getAll: (): Pizza[] => {
+    return data.map(pizza => ({
+      ...pizza,
+      formattedPrice: pizza.price.toFixed(2), // Adiciona uma propriedade formatada
+    }));
+  }
+};

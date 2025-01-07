@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/Valdiberto/pizzaria-nodets#readme",
+  "engines": {
+    "node": "23.x"
+  },
   "bugs": {
     "url": "https://github.com/Valdiberto/pizzaria-nodets/issues"
   },
@@ -15,8 +18,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start-dev": "nodemon -e ts,json,mustache src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "postinstall": "npm run build && copyfiles -u 1 src/**/*.mustache dist/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

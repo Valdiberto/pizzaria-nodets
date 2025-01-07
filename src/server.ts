@@ -4,7 +4,6 @@ import mustache from 'mustache-express'
 import path from 'path'
 import mainRoutes from './routes/index'
 
-
 //dot env config, criar o arquivo .env na raiz do projeto e colocar as variáveis de ambiente lá dentro
 
 dotenv.config()
